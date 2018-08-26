@@ -1,3 +1,8 @@
+/* 
+Author: mjuuso at https://github.com/mjuuso
+Code has been modifed to test on my env - Thanks Miiro for sharing
+*/
+
 node {
     def app
     
