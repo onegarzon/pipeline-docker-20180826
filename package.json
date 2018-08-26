@@ -1,5 +1,5 @@
 {
-  "name": "getintodevops-hellonode",
+  "name": "onegarzon-pipeline-docker-20180826",
   "version": "1.0.0",
   "description": "A Hello World HTTP server",
   "main": "main.js",
@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/getintodevops/hellonode/"
+    "url": "https://github.com/onegarzon/pipeline-docker-20180826/"
   },
   "keywords": [
     "node",
     "docker",
     "dockerfile"
   ],
-  "author": "miiro@getintodevops.com",
-  "license": "ISC"
+  "author": "jg69mail@gmail.com",
+  "license": ""
 }
