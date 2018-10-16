@@ -1,12 +1,10 @@
 // load the http module
 var http = require('http');
 
-// configure our HTTP server
-var server = http.createServer(function (request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.end("Hello Miiro. Thanks so much....for sharing at https://getintodevops.com/blog/building-your-first-docker-image-with-jenkins-2-guide-for-developers. This is Juan\n");
-});
+var http = require('http');
 
-// listen on localhost:8000
-server.listen(8089);
-console.log("Server listening at http://localhost:8089/");
+//create a server object:
+http.createServer(function (req, res) {
+  res.write('Hello World!'); //write a response to the client
+  res.end(); //end the response
+}).listen(8089); //the server object listens on port 8089
