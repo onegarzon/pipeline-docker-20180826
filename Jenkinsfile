@@ -13,10 +13,7 @@ node {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
         
-        if (env.JUAN == 'refs/remotes/origin/master') {
-            echo 'Pulling...' + env.JUAN
-            checkout scm
-        }
+        checkout scm
     }
     
     stage('Build image') {
