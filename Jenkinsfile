@@ -1,6 +1,10 @@
 /* 
 Author: mjuuso at https://github.com/mjuuso
 Code has been modifed to test on my env - Thanks Miiro for sharing
+jgarzon: This is a scripted pipeline.
+         Scripted Pipeline is serially executed from the top of a 
+         Jenkinsfile downwards, like most traditional scripts in Groovy 
+         or other languages. 
 */
 
 node {
@@ -8,8 +12,13 @@ node {
     
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
-
-        checkout scm
+        if (env.BRANCH_NAME == 'master') {
+            echo 'Checkout from master branch...'
+            checkout scm
+        } else {
+            echo "Checkout from ${env.BRANCH_NAME} branch..."
+        }
+        
     }
     
     stage('Build image') {
