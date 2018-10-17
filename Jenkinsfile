@@ -9,7 +9,7 @@ jgarzon: This is a scripted pipeline.
 
 node {
     def app
-    def branch = "${env.BRANCH_NAME}"
+    def branch = "${env.GIT_BRANCH_LOCAL}"
     
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
