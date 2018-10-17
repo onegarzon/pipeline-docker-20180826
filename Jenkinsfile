@@ -12,7 +12,7 @@ node {
     
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
-        if (env.BRANCH_NAME == 'master') {
+        if ('${env.BRANCH_NAME}' == 'master') {
             echo 'Checkout from master branch...'
             checkout scm
         } else {
