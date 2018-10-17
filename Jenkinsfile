@@ -9,11 +9,11 @@ jgarzon: This is a scripted pipeline.
 
 node {
     def app
-    def branch = env.BRANCH_NAME
+    def branch = "${env.BRANCH_NAME}"
     
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
-        echo env.BRANCH_NAME
+        echo "${env.BUILD_NUMBER}"
         if ( branch == 'master') {
             echo 'Checkout from master branch...'
             checkout scm
