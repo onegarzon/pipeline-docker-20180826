@@ -13,8 +13,10 @@ node {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
         echo 'Pulling...' + env.JUAN
-      
-        checkout scm
+        if (env.JUAN == 'refs/remotes/origin/master') {
+            checkout scm
+        }
+        
         
         
     }
