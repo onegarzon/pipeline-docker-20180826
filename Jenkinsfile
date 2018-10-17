@@ -9,17 +9,13 @@ jgarzon: This is a scripted pipeline.
 
 node {
     def app
-    def branch = "${env.GIT_BRANCH_LOCAL}"
-    
+
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
-        echo "${env.GIT_BRANCH_LOCAL}"
-        if ( branch == 'master') {
-            echo 'Checkout from master branch...'
-            checkout scm
-        } else {
-            echo "Checkout from branch..."
-        }
+        echo 'Pulling...' + env.BRANCH_NAME
+      
+        checkout scm
+        
         
     }
     
